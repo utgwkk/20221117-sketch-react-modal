@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import ReactModal from "react-modal";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={() => setIsOpen(true)}>Open modal</button>
+      <ReactModal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
+        <div>
+          <div>
+            <img src={logo} height={24} alt="logo" />
+            <div>こんにちは</div>
+          </div>
+          <div>かわいい犬ですね 12345</div>
+          <div>
+            <div>lorem ipsum</div>
+            <div>
+              <>
+                <span>34</span>
+                <span>1.234</span>
+              </>
+            </div>
+          </div>
+          <img src={logo} height={24} alt="1個目" />
+          <img src={logo} height={24} alt="2個目" />
+          <img src={logo} height={24} alt="3個目" />
+          <button onClick={() => setIsOpen(false)}>とじる</button>
+        </div>
+      </ReactModal>
     </div>
   );
 }
