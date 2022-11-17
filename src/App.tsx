@@ -19,10 +19,8 @@ function App() {
           <div>
             <div>lorem ipsum</div>
             <div>
-              <>
-                <span>34</span>
-                <span>1.234</span>
-              </>
+              <span>34</span>
+              <span>1.234</span>
             </div>
           </div>
           <img src={logo} height={24} alt="1個目" />
